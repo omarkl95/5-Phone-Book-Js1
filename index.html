@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Phone Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <header class="text-secondary text-center py-3 border-bottom border-secondary">
+                <h1>Phone Book</h1>
+            </header>
+
+            <div class="phone-book p-3 my-5 text-center bg-light border border-secondary">
+                <h2 class="text-secondary py-3 text-center">Add New Phone Book</h2>
+                <div class="form-group mx-auto text-center w-75">
+                    <label class="text-secondary" for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Ex. Mahmoud, Ahmed, ...">
+                </div>
+                <div class="form-group mx-auto text-center w-75">
+                    <label class="text-secondary" for="phone">Phone</label>
+                    <input type="text" class="form-control" id="phone" placeholder="Ex. 01×××××××××">
+                </div>
+                <div class="form-group mx-auto text-center w-75">
+                    <label class="text-secondary" for="email">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="Ex. Mahmoud@route.com">
+                </div>
+                <h4 id="alert" class="text-center my-3 py-3 text-light w-75 mx-auto"></h4>
+                <a href="#" onclick="addNew()" class="btn btn-outline-info my-3">Add To Phone Book</a>
+            </div>
+
+            <div class="input-group search mb-3 w-50 mx-auto">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                </div>
+                <input type="text" class="form-control" id="search" onkeyup="search()" placeholder="Search Contacts">
+            </div>
+            <div class="input-group mb-3 w-50 mx-auto">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Number Of Shown Contacts</span>
+                </div>
+                <input type="number" class="form-control" id="contacts-number" placeholder="Number">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" onclick="shownContacts()">Press</button>
+                </div>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" onclick="resetContacts()">Show All</button>
+                </div>
+            </div>
+
+            <div class="alert-msg">
+                <h4 id="alert" class="text-center my-3 py-3 text-light w-50 mx-auto"></h4>
+            </div>
+            <table class="table mx-auto table-striped table-bordered w-75">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="contacts-table">
+                    
+                </tbody>
+                <tfoot class="border-0">
+                    <tr>
+                        <td colspan="5"><h4 id="alert" class="text-center my-3 py-3 text-light w-75 mx-auto"></h4>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <footer class="border-top border-secondary py-3 mt-5">
+                <p class="text-muted text-center">All Rights Reserved For Phone Book @ Route 2019</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
